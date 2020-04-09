@@ -17,7 +17,6 @@ class QueueHandler :
     async def Consume(self):
         while True:
             try:
-                    
                 item = await self._queue.get()
                 print(item)
                 self._queue.task_done()
