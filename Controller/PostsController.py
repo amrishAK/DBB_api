@@ -4,6 +4,7 @@ from DI import DependencyContainer
 import json
 from Helper.JSONEncoder import JSONEncoder
 import pymongo
+import socket    
 
 class PostResource(Resource):
 
@@ -17,7 +18,10 @@ class PostResource(Resource):
             _list.append(json.loads(JSONEncoder().encode(document)))
             print(JSONEncoder().encode(document))
         Client.close()
-        return jsonify({'result' : _list})                          
+                
+        hostname = socket.gethostname()    
+        IPAddr = socket.gethostbyname(hostname)
+        return jsonify({ 'serverIp' : str(IPAddr),'result' : _list})                            
 
     def post(self):
         Client = pymongo.MongoClient("mongodb://localhost:27017/")

@@ -4,10 +4,13 @@ from Controller.TestController import TestResource
 from Controller.PostsController import PostResource
 from DI import DependencyContainer
 from Handler.RecoveryHandler import RecoveryHandler
+from flask_cors import CORS, cross_origin
+
 
 def SetupFlask():
     app = Flask(__name__)
     api = Api(app)
+    CORS(app)
     
     #Add resources
     api.add_resource(TestResource,"/test")		
