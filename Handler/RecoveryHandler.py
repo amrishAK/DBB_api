@@ -19,7 +19,6 @@ class RecoveryHandler:
 
         sortedList = sorted(postList, key = lambda i : i['PayLoadToken'], reverse=True)
         print(str(len(sortedList)))
-        print(str(sortedList[0]))
         token = sortedList[0]['PayLoadToken'] if len(sortedList) > 0 else 0
         payload = {	"PayLoadToken" : token}
         client = http.client.HTTPConnection(config['CordinatorHost'],config['CordinatorHTTPPort'])   
