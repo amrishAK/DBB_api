@@ -1,8 +1,7 @@
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource, reqparse, request
 from DI import DependencyContainer
 
 class TestResource(Resource):
-    
+
     def get(self):
-        DependencyContainer.quequeService().Produce()
-        return "Available",200
+        return "Sucess",200
