@@ -1,6 +1,6 @@
 {
     "IsPrimary" : true,
-    "CordinatorHost" : "52.49.48.231",
+    "CordinatorHost" : "3.250.86.19",
     "CordinatorSocketPort" : 7000,
     "CordinatorHTTPPort" : 8080
 }

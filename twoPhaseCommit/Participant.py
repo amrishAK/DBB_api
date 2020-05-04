@@ -71,6 +71,8 @@ class Participant:
                                 result = self.PostCollection.find(querry)
                                 print("Result"+ str(result.count()))
                                 if result.count() != 0:
+									msg = {"type" : "connectClose", "source" : "participant"}
+									self.client.send(bytes(json.dumps(msg), "utf8"))
                                     self.client.close()
                                     self.mongoClient.close()
                                     self.Status = False
